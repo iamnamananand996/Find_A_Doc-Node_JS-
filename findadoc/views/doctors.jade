@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h2 Browse Doctors
+    ul.docs
+        if doctors != false
+            each doctor,i in doctors
+                li
+                    h3 #{doctor.full_name}
+                    p Specialty : #{doctor.category}
+                    p Location : #{doctor.city} #{doctor.states} #{doctor.zip}
+                    p
+                        a(href="/doctors/details/#{doctor.doc_id}") &gt;Details
+        else
+            p Sorry no doctors listed

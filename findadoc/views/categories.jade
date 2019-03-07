@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    form(action='post' action='/categories/add' class='addFrom')
+        h3 Doctors Info
+            div
+              label(for='') Categories : 
+              input(type='text', name='full_name')
+             div
+              input(type='submit', value='Add Categories', name='submit')

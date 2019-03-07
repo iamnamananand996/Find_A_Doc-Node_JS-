@@ -1,0 +1,42 @@
+doctype strict
+html(xmlns='https://www.w3.org/1999/xhtml/')
+  head
+    title Find A Doctor
+    meta(name='description', content='website description')
+    meta(name='keywords', content='website keywords, website keywords')
+    meta(http-equiv='content-type', content='text/html; charset=windows-1252')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css', title='style')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='/javascript/main.js')
+  body
+    #main
+      #header
+        #logo
+          #logo_text
+            // class="logo_colour", allows you to change the colour of the text
+            h1
+              a(href='index.html')
+                | Find A
+                span.logo_colour  Doctor
+            h2 Find Doctor in your area.
+        #menubar
+          ul#menu
+            // put class="selected" in the li tag for the selected page - to highlight which page you're on
+            li
+              a(href='/') Home
+            li
+              a(href='/doctors') Browse Doctor
+            li
+              a(href='/doctors/add') Add Doctors
+            li
+              a(href='/categories/add') Add Categories
+      #site_content
+         .left
+            != messages()
+            block content
+          .right
+            include ./includes/categories.jade
+          div(style='clear:both;')
+        
+      #footer
+        | Copyright © FindADoc | In YOur Area
